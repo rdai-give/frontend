@@ -3,6 +3,9 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/Layout/Layout"
+import ProjectEntity from "../components/ProjectEntity/ProjectEntity"
+
+import PROJECTS from "../components/constants"
 
 import "../components/fonts.css"
 
@@ -27,11 +30,20 @@ const StyledLink = styled(Link)`
   }
 `
 
+const ProjectList = () => {
+  const list = PROJECTS.map(project => {
+    return <ProjectEntity key={`${project.name}`} project={project} />
+  })
+  console.log(list)
+  return list
+}
+
 const Select = () => {
   return (
     <Layout>
       <Container>
-        <SEO title="Home" />
+        <SEO title="Select" />
+        <ProjectList />
         <StyledLink to="/altar">Approach Altar of rDAI</StyledLink>
       </Container>
     </Layout>

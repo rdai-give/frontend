@@ -29,18 +29,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `rDAI Give`,
-        short_name: `r-give`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/icon.png`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-manifest`,
+    //   options: {
+    //     name: `rDAI Give`,
+    //     short_name: `r-give`,
+    //     start_url: `/`,
+    //     background_color: `#663399`,
+    //     theme_color: `#663399`,
+    //     display: `minimal-ui`,
+    //     icon: `src/images/icon.png`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
