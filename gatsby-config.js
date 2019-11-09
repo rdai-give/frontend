@@ -15,13 +15,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-routes`,
-      options: {
-        // this is the path to your routes configuration file
-        path: `${__dirname}/src/components/PageRouter/routes.js`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-routes`,
+    //   options: {
+    //     // this is the path to your routes configuration file
+    //     path: `${__dirname}/src/components/PageRouter/routes.js`,
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
