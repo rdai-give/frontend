@@ -56,8 +56,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy-surge": "yarn build && surge ./public rdai-trees.surge.sh",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/pi0neerpat/rdai-trees.git",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/rdai-give/rdai-give-frontend.git",
     "lint": "eslint ./src --fix"
   },
   "repository": {

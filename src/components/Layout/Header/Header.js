@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Logo from "../../../images/logo.svg"
@@ -26,7 +25,7 @@ const StyledButton = styled(Link)`
   }
 `
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header
     style={{
       background: `transparent`,
@@ -38,6 +37,7 @@ const Header = ({ siteTitle }) => (
   >
     <Link to="/">
       <img
+        alt="home"
         src={Logo}
         style={{
           margin: "0",
@@ -45,7 +45,7 @@ const Header = ({ siteTitle }) => (
       />
     </Link>
 
-    <StyledButton to="/garden/">Log in to your to garden</StyledButton>
+    <StyledButton to="/garden/">Log in</StyledButton>
   </header>
 )
 
