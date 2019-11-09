@@ -1,8 +1,7 @@
+// import React, { useContext } from "react"
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import SEO from "../components/seo"
-import Layout from "../components/Layout/Layout"
 
 // import { ethers } from "ethers"
 // import DAIabi from "../Web3/contracts/dai"
@@ -92,14 +91,13 @@ const MainPage = () => {
   // }
 
   return (
-    <Layout>
+    <>
       <Container>
-        <SEO title="Home" />
         <H1>Earn and donate interest to Open Source projects</H1>
         <P>Sub-header text</P>
         <StyledLink to="/select">Connect</StyledLink>
       </Container>
-    </Layout>
+    </>
   )
 }
 
