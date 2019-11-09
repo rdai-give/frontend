@@ -6,9 +6,9 @@ module.exports = {
   siteMetadata: {
     title: `rDAI Give`,
     description: `Donate to open source projects.`,
-    author: `pi0neerpat, sweetpea22, vrortvedt, arnav1gup`
+    author: `pi0neerpat, sweetpea22, vrortvedt, arnav1gup`,
   },
-  pathPrefix: '/rdai-give',
+  pathPrefix: "/rdai-give",
 
   plugins: [
     `gatsby-plugin-offline`,
@@ -19,15 +19,15 @@ module.exports = {
       resolve: `gatsby-plugin-routes`,
       options: {
         // this is the path to your routes configuration file
-        path: `${__dirname}/src/components/PageRouter/routes.js`
-      }
+        path: `${__dirname}/src/components/PageRouter/routes.js`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -38,14 +38,14 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`
-      }
+        icon: `src/images/icon.png`,
+      },
     },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
-      }
-    }
-  ]
-};
+      },
+    },
+  ],
+}
