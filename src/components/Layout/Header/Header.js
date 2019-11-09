@@ -45,7 +45,7 @@ const Header = () => (
       />
     </Link>
 
-    <StyledButton to="/garden/">Log in to your to garden</StyledButton>
+    <StyledButton to="/garden/">Log in</StyledButton>
   </header>
 )
 

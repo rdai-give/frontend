@@ -133,7 +133,12 @@ const MainPage = () => {
       <P>Sub-header text</P>
       <TxStatusComponent />
       <StyledLink to="/">Check how it works</StyledLink>
-      <button type="button" onClick={startGrowing()}>
+      <button
+        type="button"
+        onClick={() => {
+          startGrowing()
+        }}
+      >
         Go
       </button>
     </Container>
