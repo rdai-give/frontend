@@ -25,7 +25,32 @@ workbox.core.clientsClaim();
  * requests for URLs in the manifest.
  * See https://goo.gl/S9QRab
  */
-self.__precacheManifest = [].concat(self.__precacheManifest || []);
+self.__precacheManifest = [
+  {
+    "url": "webpack-runtime-d0c9d14bb544550e8c56.js"
+  },
+  {
+    "url": "commons-cdb2fb1f01b1cb19b42e.js"
+  },
+  {
+    "url": "app-a92ff59329dd4462b5f2.js"
+  },
+  {
+    "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-a7388efdc62430243a75.js"
+  },
+  {
+    "url": "offline-plugin-app-shell-fallback/index.html",
+    "revision": "455cab9b2771836ea4258cfecbfd495f"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "d274adf0f008ef152ce70a312b04b730"
+  },
+  {
+    "url": "manifest.webmanifest",
+    "revision": "8c95fec5a2aa4dd23263bbc4c9a3baf4"
+  }
+].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/(\.js$|\.css$|static\/)/, new workbox.strategies.CacheFirst(), 'GET');
@@ -116,7 +141,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/rdai-give/app-a018896a3dda871c80ca.js`))) {
+  if (!resources || !(await caches.match(`/rdai-give/app-a92ff59329dd4462b5f2.js`))) {
     return await fetch(event.request)
   }
 
