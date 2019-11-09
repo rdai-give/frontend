@@ -54,38 +54,38 @@ const Container = styled.section`
 `
 
 const MainPage = () => {
-  const [context, setContext] = useContext(Context)
+  const [context] = useContext(Context)
 
-  const { notify, txStatus, contracts } = context
+  const { txStatus, contracts } = context
   let DAIContract
   if (typeof contracts !== "undefined") {
-    DAIContract = contracts[DAIContract]
+    DAIContract = contracts.DAIContract
   }
+  console.log(DAIContract)
 
   const startGrowing = async level => {
     const levelAmountDai = [10, 100, 500]
 
     if (typeof DAIContract !== "undefined") {
-      const tx = await DAIContract.approve(
+      DAIContract.approve(
         "0xea718e4602125407fafcb721b7d760ad9652dfe7",
         bigNumberify(levelAmountDai[level])
       )
-      const isBrowser = typeof window !== "undefined"
-      if (isBrowser) {
-        const { emitter } = notify.hash(tx.hash)
-
-        // listen to transaction events
-        emitter.on("txSent", () => {
-          console.log("txSent")
-          setContext({ ...context, txStatus: "txSent" })
-        })
-        emitter.on("txPool", console.log)
-        emitter.on("txConfirmed", console.log)
-        emitter.on("txSpeedUp", console.log)
-        emitter.on("txCancel", console.log)
-        emitter.on("txFailed", console.log)
-        emitter.on("all", console.log)
-      }
+      //   if (isBrowser) {
+      //     const { emitter } = notify.hash(tx.hash)
+      //
+      //     // listen to transaction events
+      //     emitter.on("txSent", () => {
+      //       console.log("txSent")
+      //       setContext({ ...context, txStatus: "txSent" })
+      //     })
+      //     emitter.on("txPool", console.log)
+      //     emitter.on("txConfirmed", console.log)
+      //     emitter.on("txSpeedUp", console.log)
+      //     emitter.on("txCancel", console.log)
+      //     emitter.on("txFailed", console.log)
+      //     emitter.on("all", console.log)
+      //   }
     }
   }
 
@@ -105,10 +105,10 @@ const MainPage = () => {
       <button
         type="button"
         onClick={() => {
-          startGrowing()
+          startGrowing(1)
         }}
       >
-        Go
+        Connect
       </button>
     </Container>
   )

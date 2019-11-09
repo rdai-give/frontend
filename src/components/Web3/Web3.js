@@ -118,10 +118,12 @@ const Web3Wrapper = () => {
           tribute,
           // subspace,
           address: walletAddress,
-          // contracts: {
-          //   rDAIContract,
-          //   DAIContract,
-          // },
+          isWeb3Present: true,
+          error: "",
+          contracts: {
+            rDAIContract,
+            DAIContract,
+          },
         })
       } catch (error) {
         const errorMsg = `Failed to load Web3 Tools:  ${error.message}`
