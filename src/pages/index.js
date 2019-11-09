@@ -1,4 +1,4 @@
-import React, { useContext } from "react"
+import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import SEO from "../components/seo"
@@ -8,7 +8,7 @@ import Layout from "../components/Layout/Layout"
 // import DAIabi from "../Web3/contracts/dai"
 // import rDAIabi from "../Web3/contracts/rdai"
 
-import { Context } from "../components/context"
+// import { Context } from "../components/context"
 import "../components/fonts.css"
 
 // const { bigNumberify } = ethers.utils
@@ -56,14 +56,14 @@ const Container = styled.section`
 `
 
 const MainPage = () => {
-  const [context] = useContext(Context)
-
-  const { txStatus, contracts } = context
-  let DAIContract
-  if (typeof contracts !== "undefined") {
-    DAIContract = contracts.DAIContract
-  }
-  console.log(DAIContract)
+  // const [context] = useContext(Context)
+  //
+  // const { txStatus, contracts } = context
+  // let DAIContract
+  // if (typeof contracts !== "undefined") {
+  //   DAIContract = contracts.DAIContract
+  // }
+  // console.log(DAIContract)
 
   // const startGrowing = async level => {
   //   const levelAmountDai = [10, 100, 500]
@@ -91,20 +91,12 @@ const MainPage = () => {
   //   }
   // }
 
-  const TxStatusComponent = () => {
-    if (txStatus === "txSent") {
-      return <p>Transactions pending</p>
-    }
-    return null
-  }
-
   return (
     <Layout>
       <Container>
         <SEO title="Home" />
         <H1>Earn and donate interest to Open Source projects</H1>
         <P>Sub-header text</P>
-        <TxStatusComponent />
         <StyledLink to="/select">Connect</StyledLink>
       </Container>
     </Layout>
