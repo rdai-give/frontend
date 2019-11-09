@@ -5,7 +5,7 @@
     "category": "",
     "address": "",
     "twitter": "",
-    "bounties": []
+    "URL": ""
 },
 {
     "name": "EthHub",
@@ -14,16 +14,16 @@
     "category": "Education",
     "address": "0xA19FCDaD77C1F0fd184689aca88BabCF68010347",
     "twitter": "@ethhub_io",
-    "bounties": [""]
+    "URL": "https://ethhub.io/"
 },
 {
     "name": "Gitcoin",
-    "description": "Crowdfunding and freelance developers for your software projects",
+    "description": "Crowdfunding and freelance devs for your projects",
     "image": ,
     "category": "Sustainability",
     "address": "0x00De4B13153673BCAE2616b67bf822500d325Fc3",
     "twitter": "@gitcoin",
-    "bounties": [""]
+    "URL": "https://gitcoin.co/"
 },
 {
     "name": "threadpool",
@@ -32,14 +32,59 @@
     "category": "Education",
     "address": "0x18D80Ffdbd08F70B314f06Ae9D1b309135Af9405",
     "twitter": "@threadpool_io",
-    "bounties": ["EF"]
+    "URL": ""
 },
 {
     "name": "One Click Dapp",
-    "description": "Turn your smart contract into a customizable, easy-to-use dApp",
+    "description": "Turning smart contracts into easy-to-use dApps",
     "image": ,
     "category": "Tooling",
-    "address": "",
+    "address": "oneclickdapp.eth",
     "twitter": "@pi0neerpat",
-    "bounties": [""]
+    "URL": "https://oneclickdapp.com"
+},
+{
+    "name": "rDAO",
+    "description": "Programmable interest payments for everyone",
+    "image": "rdailogo.png",
+    "category": "DeFi",
+    "address": "0x5D7D257d97D8a81F51187a77C6dD226Fb8424d90",
+    "twitter": "@rDAI_DAO",
+    "URL": "https://rdai.money"
+},
+{
+    "name": "The Altar of rDAI",
+    "description": "Making rDAI offerings to open source projects",
+    "image": ,
+    "category": "DeFi",
+    "address": "0x5D7D257d97D8a81F51187a77C6dD226Fb8424d90",
+    "twitter": "@AltarOfrDAI",
+    "URL": "https://altarofrdai.io/"
+},
+{
+    "name": "FLiFF",
+    "description": "The better way to settle up with your friends",
+    "image": "fliff-cover.png",
+    "category": "DeFi",
+    "address": "chris.unlock-protocol.eth",
+    "twitter": "@AppFliff",
+    "URL": "https://fliff.app/"
+},
+{
+    "name": "Cypherplugs",
+    "description": "Freedom-enhancing Linux distro for cyber protocols",
+    "image": ,
+    "category": "Tooling",
+    "address": "cypherplugs.eth",
+    "twitter": "@cypherplugs",
+    "URL": "https://cypherplugs.com"
+},
+{
+    "name": "Cryptobrawl",
+    "description": "Interoperable NFT battleground",
+    "image": ,
+    "category": "Gaming",
+    "address": "0x59B96e98B97f3d1A7e59dF53cb0f05E650c4FFfA",
+    "twitter": "@cryptobrawl",
+    "URL": "https://cryptobrawl.online"
 },
