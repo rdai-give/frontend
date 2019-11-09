@@ -1,0 +1,70 @@
+{
+  "name": "rdai-give",
+  "private": false,
+  "description": "Donate to Open Source projects",
+  "version": "0.1.0",
+  "dependencies": {
+    "@status-im/subspace": "^1.1.0",
+    "babel-plugin-styled-components": "^1.10.6",
+    "bnc-notify": "^0.2.5",
+    "ethers": "^4.0.39",
+    "gatsby": "^2.17.6",
+    "gatsby-image": "^2.2.30",
+    "gatsby-plugin-manifest": "^2.2.25",
+    "gatsby-plugin-offline": "^3.0.17",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-routes": "^1.0.0",
+    "gatsby-plugin-sharp": "^2.2.34",
+    "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-source-filesystem": "^2.1.35",
+    "gatsby-transformer-sharp": "^2.3.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1",
+    "rxjs": "^6.5.3",
+    "styled-components": "^4.4.1",
+    "tribute-utils": "^0.0.5",
+    "web3": "^1.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "gh-pages": "^2.1.1",
+    "husky": "^3.0.9",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^1.18.2",
+    "prettier-eslint": "^9.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "keywords": [
+    "rDAI"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy-surge": "yarn build && surge ./public rdai-trees.surge.sh",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/pi0neerpat/rdai-trees.git",
+    "lint": "eslint ./src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdai-give/rdai-give-frontend"
+  },
+  "bugs": {
+    "url": "https://github.com/rdai-give/rdai-give-frontend/issues"
+  }
+}

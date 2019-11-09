@@ -1,0 +1,16 @@
+language: node_js
+before_script:
+  - npm install -g gatsby-cli
+node_js:
+  - "10"
+deploy:
+  provider: script
+  # Note: change "docs" to the directory where your gatsby-site lives, if necessary
+  script: cd ./ && yarn && yarn deploy
+  skip_cleanup: true
+  on:
+    branch: master
+after_success:
+  - ./scripts/send.sh success $DISCORD_WEBHOOK_URL
+after_failure:
+  - ./scripts/send.sh failure $DISCORD_WEBHOOK_URL
