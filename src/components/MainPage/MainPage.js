@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 import { ethers } from "ethers"
-import DAIabi from "../Web3/contracts/dai"
-import rDAIabi from "../Web3/contracts/rdai"
+// import DAIabi from "../Web3/contracts/dai"
+// import rDAIabi from "../Web3/contracts/rdai"
 
 import { Context } from "../context"
 import "../fonts.css"
@@ -54,70 +54,39 @@ const Container = styled.section`
 `
 
 const MainPage = () => {
-  const [context, setContext] = useContext(Context)
+  const [context] = useContext(Context)
 
-  const { notify, subspace, address, txStatus } = context
-
-  const walletProvider = new ethers.providers.Web3Provider(
-    window.web3.currentProvider
-  )
-
-  const DAIContract = new ethers.Contract(
-    "0xbf7a7169562078c96f0ec1a8afd6ae50f12e5a99",
-    DAIabi,
-    walletProvider.getSigner()
-  )
-  console.log(context)
-  // SUBSPACE
-  if (subspace && address && address[0]) {
-    const daiContract = subspace.contract({
-      abi: DAIabi,
-      address: "0xbf7a7169562078c96f0ec1a8afd6ae50f12e5a99",
-    })
-    const rdaiContract = subspace.contract({
-      abi: rDAIabi,
-      address: "0xea718e4602125407fafcb721b7d760ad9652dfe7",
-    })
-    daiContract.methods
-      .balanceOf(address[0])
-      .track()
-      .subscribe(balance => {
-        console.log(`DAI balance: ${balance}`)
-      })
-    rdaiContract.methods
-      .balanceOf(address[0])
-      .track()
-      .subscribe(balance => {
-        console.log(`rDAI balance: ${balance}`)
-      })
-
-    subspace
-      .trackBalance("0x9492510BbCB93B6992d8b7Bb67888558E12DCac4")
-      .subscribe(balance => {
-        console.log("ETH balance is ", balance)
-      })
+  const { txStatus, contracts } = context
+  let DAIContract
+  if (typeof contracts !== "undefined") {
+    DAIContract = contracts.DAIContract
   }
+  console.log(DAIContract)
 
   const startGrowing = async level => {
     const levelAmountDai = [10, 100, 500]
 
-    const tx = await DAIContract.approve(
-      "0xea718e4602125407fafcb721b7d760ad9652dfe7",
-      bigNumberify(levelAmountDai[level])
-    )
-    const { emitter } = notify.hash(tx.hash)
-
-    // listen to transaction events
-    emitter.on("txSent", () => {
-      console.log("txSent")
-      setContext({ ...context, txStatus: "txSent" })
-    })
-    emitter.on("txPool", console.log)
-    emitter.on("txConfirmed", console.log)
-    emitter.on("txSpeedUp", console.log)
-    emitter.on("txCancel", console.log)
-    emitter.on("txFailed", console.log)
-    emitter.on("all", console.log)
+    if (typeof DAIContract !== "undefined") {
+      DAIContract.approve(
+        "0xea718e4602125407fafcb721b7d760ad9652dfe7",
+        bigNumberify(levelAmountDai[level])
+      )
+      //   if (isBrowser) {
+      //     const { emitter } = notify.hash(tx.hash)
+      //
+      //     // listen to transaction events
+      //     emitter.on("txSent", () => {
+      //       console.log("txSent")
+      //       setContext({ ...context, txStatus: "txSent" })
+      //     })
+      //     emitter.on("txPool", console.log)
+      //     emitter.on("txConfirmed", console.log)
+      //     emitter.on("txSpeedUp", console.log)
+      //     emitter.on("txCancel", console.log)
+      //     emitter.on("txFailed", console.log)
+      //     emitter.on("all", console.log)
+      //   }
+    }
   }
 
   const TxStatusComponent = () => {
@@ -136,10 +105,10 @@ const MainPage = () => {
       <button
         type="button"
         onClick={() => {
-          startGrowing()
+          startGrowing(1)
         }}
       >
-        Go
+        Connect
       </button>
     </Container>
   )

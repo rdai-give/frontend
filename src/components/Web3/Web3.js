@@ -1,9 +1,8 @@
 import React, { useContext, useEffect } from "react"
 import { ethers } from "ethers"
 import Tribute from "tribute-utils"
-import Notify from "bnc-notify"
-import Subspace from "@status-im/subspace"
-import Web3 from "web3"
+// import Notify from "bnc-notify"
+// import Subspace from "@status-im/subspace"
 
 import { Context } from "../context"
 
@@ -49,6 +48,7 @@ const Web3Wrapper = () => {
       )
 
       const network = await walletProvider.getNetwork()
+
       // eslint-disable-next-line no-console
       console.log(`On Network: ${network.name}`)
 
@@ -73,8 +73,8 @@ const Web3Wrapper = () => {
       setContext({
         ...context,
         address: walletAddress,
-        contracts: [DAIContract, rDAIContract],
-        provider: walletProvider,
+        contracts: { DAIContract, rDAIContract },
+        walletProvider,
       })
 
       // Load Tools
@@ -84,36 +84,42 @@ const Web3Wrapper = () => {
         const userDetails = await tribute.getInfo(walletAddress[0])
 
         // Block Native
-        const bncOptions = {
-          dappId: process.env.BNCKey,
-          darkMode: true,
-          mobilePosition: "top",
-          desktopPosition: "bottomRight",
-          networkId: 42,
-          transactionEvents: event => {
-            // eslint-disable-next-line no-console
-            console.log("Transaction Event:", event.transaction)
-          },
-        }
-        const notify = Notify(bncOptions)
-
+        // const bncOptions = {
+        //   dappId: process.env.BNCKey,
+        //   darkMode: true,
+        //   mobilePosition: "top",
+        //   desktopPosition: "bottomRight",
+        //   networkId: 42,
+        //   transactionEvents: event => {
+        //     // eslint-disable-next-line no-console
+        //     console.log("Transaction Event:", event.transaction)
+        //   },
+        // }
+        // let notify
+        // if (isBrowser) {
+        //   notify = Notify(bncOptions)
+        // }
         // SUBSPACE
-
-        const web3 = new Web3(
-          `wss://kovan.infura.io/ws/v3/${process.env.INFURA_ENDPOINT_KEY}`
-        )
+        // const dataProvider = ethers.providers.JsonRpcProvider(
+        //   `wss://kovan.infura.io/ws/v3/${process.env.INFURA_ENDPOINT_KEY}`
+        // )
+        // const web3 = new Web3(
+        //   `wss://kovan.infura.io/ws/v3/${process.env.INFURA_ENDPOINT_KEY}`
+        // )
         // Option to use MetaMask provider
         // const subspace = new Subspace(window.web3.currentProvider)
-        const subspace = new Subspace(web3.currentProvider)
-        await subspace.init()
+        // const subspace = new Subspace(dataProvider.currentProvider)
+        // await subspace.init()
 
         setContext({
           ...context,
           userDetails,
-          notify,
+          // notify,
           tribute,
-          subspace,
+          // subspace,
           address: walletAddress,
+          isWeb3Present: true,
+          error: "",
           contracts: {
             rDAIContract,
             DAIContract,
