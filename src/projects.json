@@ -1,0 +1,45 @@
+{
+    "name": "",
+    "description": "",
+    "image": ,
+    "category": "",
+    "address": "",
+    "twitter": "",
+    "bounties": []
+},
+{
+    "name": "EthHub",
+    "description": "A TRUSTED SOURCE IN A TRUSTLESS WORLD",
+    "image": ,
+    "category": "Education",
+    "address": "0xA19FCDaD77C1F0fd184689aca88BabCF68010347",
+    "twitter": "@ethhub_io",
+    "bounties": [""]
+},
+{
+    "name": "Gitcoin",
+    "description": "Crowdfunding and freelance developers for your software projects",
+    "image": ,
+    "category": "Sustainability",
+    "address": "0x00De4B13153673BCAE2616b67bf822500d325Fc3",
+    "twitter": "@gitcoin",
+    "bounties": [""]
+},
+{
+    "name": "threadpool",
+    "description": "",
+    "image": ,
+    "category": "Education",
+    "address": "0x18D80Ffdbd08F70B314f06Ae9D1b309135Af9405",
+    "twitter": "@threadpool_io",
+    "bounties": ["EF"]
+},
+{
+    "name": "One Click Dapp",
+    "description": "Turn your smart contract into a customizable, easy-to-use dApp",
+    "image": ,
+    "category": "Tooling",
+    "address": "",
+    "twitter": "@pi0neerpat",
+    "bounties": [""]
+},
