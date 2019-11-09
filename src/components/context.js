@@ -1,7 +1,7 @@
 import React, { useState, createContext } from "react"
 import PropTypes from "prop-types"
 
-const Context = createContext()
+const Context = createContext([{}, () => {}])
 
 const Provider = props => {
   const { children } = props
