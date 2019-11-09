@@ -57,7 +57,11 @@ const MainPage = () => {
   const [context, setContext] = useContext(Context)
 
   const { notify, txStatus, contracts } = context
-  const { DAIContract } = contracts
+  let DAIContract
+  if (typeof contracts !== "undefined") {
+    DAIContract = contracts[DAIContract]
+  }
+
   const startGrowing = async level => {
     const levelAmountDai = [10, 100, 500]
 
@@ -66,19 +70,22 @@ const MainPage = () => {
         "0xea718e4602125407fafcb721b7d760ad9652dfe7",
         bigNumberify(levelAmountDai[level])
       )
-      const { emitter } = notify.hash(tx.hash)
+      const isBrowser = typeof window !== "undefined"
+      if (isBrowser) {
+        const { emitter } = notify.hash(tx.hash)
 
-      // listen to transaction events
-      emitter.on("txSent", () => {
-        console.log("txSent")
-        setContext({ ...context, txStatus: "txSent" })
-      })
-      emitter.on("txPool", console.log)
-      emitter.on("txConfirmed", console.log)
-      emitter.on("txSpeedUp", console.log)
-      emitter.on("txCancel", console.log)
-      emitter.on("txFailed", console.log)
-      emitter.on("all", console.log)
+        // listen to transaction events
+        emitter.on("txSent", () => {
+          console.log("txSent")
+          setContext({ ...context, txStatus: "txSent" })
+        })
+        emitter.on("txPool", console.log)
+        emitter.on("txConfirmed", console.log)
+        emitter.on("txSpeedUp", console.log)
+        emitter.on("txCancel", console.log)
+        emitter.on("txFailed", console.log)
+        emitter.on("all", console.log)
+      }
     }
   }
 

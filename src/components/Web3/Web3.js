@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { ethers } from "ethers"
 import Tribute from "tribute-utils"
-import Notify from "bnc-notify"
+// import Notify from "bnc-notify"
 // import Subspace from "@status-im/subspace"
 
 import { Context } from "../context"
@@ -84,18 +84,21 @@ const Web3Wrapper = () => {
         const userDetails = await tribute.getInfo(walletAddress[0])
 
         // Block Native
-        const bncOptions = {
-          dappId: process.env.BNCKey,
-          darkMode: true,
-          mobilePosition: "top",
-          desktopPosition: "bottomRight",
-          networkId: 42,
-          transactionEvents: event => {
-            // eslint-disable-next-line no-console
-            console.log("Transaction Event:", event.transaction)
-          },
-        }
-        const notify = Notify(bncOptions)
+        // const bncOptions = {
+        //   dappId: process.env.BNCKey,
+        //   darkMode: true,
+        //   mobilePosition: "top",
+        //   desktopPosition: "bottomRight",
+        //   networkId: 42,
+        //   transactionEvents: event => {
+        //     // eslint-disable-next-line no-console
+        //     console.log("Transaction Event:", event.transaction)
+        //   },
+        // }
+        // let notify
+        // if (isBrowser) {
+        //   notify = Notify(bncOptions)
+        // }
         // SUBSPACE
         // const dataProvider = ethers.providers.JsonRpcProvider(
         //   `wss://kovan.infura.io/ws/v3/${process.env.INFURA_ENDPOINT_KEY}`
@@ -111,7 +114,7 @@ const Web3Wrapper = () => {
         setContext({
           ...context,
           userDetails,
-          notify,
+          // notify,
           tribute,
           // subspace,
           address: walletAddress,
