@@ -67,7 +67,6 @@ const MainPage = () => {
     DAIabi,
     walletProvider.getSigner()
   )
-  console.log(context)
   // SUBSPACE
   if (subspace && address && address[0]) {
     const daiContract = subspace.contract({

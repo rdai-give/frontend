@@ -9,12 +9,14 @@ const PageRouter = () => {
   const [context, setContext] = useContext(Context)
   const { showGarden } = context
 
-  const route = window.location.pathname
-  const showGardenPage = route.toLowerCase().indexOf(PAGES.GARDEN) > -1
-  if (showGardenPage && !showGarden) {
-    setContext({ ...context, showGarden: true })
-  } else if (!showGardenPage && showGarden) {
-    setContext({ ...context, showGarden: false })
+  if (typeof window !== `undefined`) {
+    const route = window.location.pathname
+    const showGardenPage = route.toLowerCase().indexOf(PAGES.GARDEN) > -1
+    if (showGardenPage && !showGarden) {
+      setContext({ ...context, showGarden: true })
+    } else if (!showGardenPage && showGarden) {
+      setContext({ ...context, showGarden: false })
+    }
   }
   return <InterfaceHandler />
 }
