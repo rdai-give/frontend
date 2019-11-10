@@ -23,6 +23,17 @@ const H1 = styled.h1`
   color: #0e0544;
 `
 
+const H2 = styled.h2`
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  font-size: 64px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #0e0544;
+`
+
 const P = styled.p`
   font-family: "Inter", sans-serif;
   font-size: 24px;
@@ -94,10 +105,19 @@ const MainPage = () => {
     <>
       <Container>
         <H1>Welcome to The Altar of rDAI</H1>
-        <H2>The Altar presses your idle DAI into serving a greater cause - funding open source!</H2>
-        <P>Your DAI never leaves your wallet, though it earns interest that may be directed to worthy providers of our open source ecosystem</P>
-        <P>Find more information about rDAI at <a href="https://rdai.money">rdai.money</a><P>  
-    <StyledLink to="/select">Proceed</StyledLink>
+        <H2>
+          The Altar presses your idle DAI into serving a greater cause - funding
+          open source!
+        </H2>
+        <P>
+          Your DAI never leaves your wallet, though it earns interest that may
+          be directed to worthy providers of our open source ecosystem
+        </P>
+        <P>
+          Find more information about rDAI at{" "}
+          <a href="https://rdai.money">rdai.money</a>
+        </P>
+        <StyledLink to="/select">Proceed</StyledLink>
       </Container>
     </>
   )
