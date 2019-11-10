@@ -10,7 +10,7 @@
 {
     "name": "EthHub",
     "description": "A TRUSTED SOURCE IN A TRUSTLESS WORLD",
-    "image": ,
+    "image": "ethhub",
     "category": "Education",
     "address": "0xA19FCDaD77C1F0fd184689aca88BabCF68010347",
     "twitter": "@ethhub_io",
@@ -19,7 +19,7 @@
 {
     "name": "One Click Dapp",
     "description": "Turning smart contracts into easy-to-use dApps",
-    "image": ,
+    "image": "ocd",
     "category": "Tooling",
     "address": "oneclickdapp.eth",
     "twitter": "@pi0neerpat",
@@ -28,7 +28,7 @@
 {
     "name": "rDAO",
     "description": "Programmable interest payments for everyone",
-    "image": "rdailogo.png",
+    "image": "rdai",
     "category": "DeFi",
     "address": "0x5D7D257d97D8a81F51187a77C6dD226Fb8424d90",
     "twitter": "@rDAI_DAO",
@@ -37,7 +37,7 @@
 {
     "name": "The Altar of rDAI",
     "description": "Making rDAI offerings to open source projects",
-    "image": ,
+    "image": "altar",
     "category": "DeFi",
     "address": "0x5D7D257d97D8a81F51187a77C6dD226Fb8424d90",
     "twitter": "@AltarOfrDAI",
