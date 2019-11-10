@@ -26,6 +26,7 @@ const Web3Wrapper = () => {
         window.web3.currentProvider
       )
       const network = await walletProvider.getNetwork()
+      console.log(network.name)
 
       // eslint-disable-next-line no-console
       console.log(`Loaded address ${walletAddress}`)

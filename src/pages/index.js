@@ -35,6 +35,10 @@ const H2 = styled.h2`
   color: #c80303;
 `
 
+const Anchor = styled.a`
+  color: white;
+`
+
 const P = styled.p`
   font-family: monospace;
   font-size: 24px;
@@ -117,7 +121,8 @@ const MainPage = () => {
         <H2>The Altar presses your idle DAI into serving a greater purpose</H2>
         <br />
         <P>
-          More rDAI info at <a href="https://rdai.money">rdai.money</a>
+          More rDAI info at{" "}
+          <Anchor href="https://rdai.money">rdai.money</Anchor>
         </P>
         <br />
         <StyledLink to="/select">Proceed</StyledLink>

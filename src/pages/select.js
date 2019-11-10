@@ -49,6 +49,7 @@ const StyledButton = styled.button`
   font-size: 40px;
   font-weight: 600;
   color: #e10707;
+  margin-top: 30px;
   text-decoration: none;
   padding-top: 20px;
   padding-right: 20px;
@@ -73,7 +74,6 @@ const Select = () => {
   })
   const [context, setContext] = useContext(Context)
   const { tribute, userDetails, compoundRate } = context
-  console.log(context)
   const isBrowser = typeof window !== "undefined"
   let cRate = 0
   if (isBrowser) cRate = localStorage.getItem("compoundRate")
@@ -83,7 +83,6 @@ const Select = () => {
   if (typeof userDetails !== "undefined") {
     daiBalance = userDetails.daiBalance
   }
-  console.log(context)
   const buyingPower = Math.round(daiBalance * cRate) / 100
   let cardOffering = ""
   if (state.selectedCards.length > 0)
@@ -98,6 +97,7 @@ const Select = () => {
       setState({ selectedCards: cardsArray })
       return
     }
+    if (state.selectedCards.length === 4) return
     cardsArray.push(name)
     setState({
       selectedCards: cardsArray,
@@ -135,11 +135,13 @@ const Select = () => {
   }
 
   const ApproachButton = () => {
-    let buttonText = "Approach the Altar of rDAI"
+    let buttonText = "You must choose 4"
+    const isReady = state.selectedCards.length === 4
+    if (isReady) buttonText = "Approach the Altar of rDAI"
     if (state.isPendingTx)
       buttonText = "The Altar is reviewing your offering..."
     return (
-      <StyledButton type="button" onClick={submitTribute()}>
+      <StyledButton type="button" onClick={submitTribute()} disabled={!isReady}>
         {buttonText}
       </StyledButton>
     )
@@ -178,7 +180,7 @@ const Select = () => {
         <ProjectContainer>
           <ProjectList />
         </ProjectContainer>
-        <ApproachButton />
+        <ApproachButton disabled />
       </Container>
     </>
   )
