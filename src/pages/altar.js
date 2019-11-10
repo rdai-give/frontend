@@ -6,7 +6,7 @@ import { Context } from "../components/context"
 // import ProjectCard from "../components/ProjectCard/ProjectCard"
 
 import PROJECTS from "../components/constants"
-import Cards from "../components/Cards/Cards"
+import Card from "../components/Card/Card"
 
 import "../components/fonts.css"
 import "./temple.css"
@@ -22,17 +22,18 @@ const MainContainer = styled.div`
   text-align: center;
 `
 const CardContainer = styled.section`
-  position: absolute;
-  top: 546px;
-  margin: 0 auto;
-  width: 100%;
+  display: flex;
+  top: -450px;
+  position: relative;
+  height: 0;
+  margin-left: 60px;
 `
 const H1 = styled.h1`
   font-family: monospace;
   font-weight: 300;
-  font-size: 32px;
+  font-size: 36px;
   width: 100%;
-  padding: 30px 30px 0 30px;
+  padding: 30px 50px 0 50px;
   text-shadow: 1px 1px black;
   color: #c80303;
   position: absolute;
@@ -52,6 +53,7 @@ const HeaderBackground = styled.div`
   position: absolute;
   filter: grayscale(100%);
 `
+
 const Altar = () => {
   const [context] = useContext(Context)
   const { selectedCards, cardOffering } = context
@@ -60,11 +62,17 @@ const Altar = () => {
 
   let selectedArray = ["EthHub", "rDAO", "threadpool", "BountyUp"]
   if (typeof selectedCards !== "undefined") selectedArray = selectedCards
-
-  const cards = []
-  PROJECTS.forEach(project => {
+  let count = 0
+  const cards = PROJECTS.map(project => {
     if (selectedArray.includes(project.name)) {
-      cards.push(IMAGES[`${project.image}Card`])
+      count += 1
+      console.log(count > 1 && count < 4)
+      return (
+        <Card
+          isLow={count > 1 && count < 4}
+          image={IMAGES[`${project.image}Card`]}
+        />
+      )
     }
     return null
   })
@@ -77,13 +85,11 @@ const Altar = () => {
         {offering} DAI will flow to each project over the coming year. Well
         done, puny human.
       </H1>
-      <CardContainer>
-        <Cards cards={cards} />
-      </CardContainer>
       <Container>
         <img src={big} alt="" className="original" />
         <img src={redeyes} alt="" className="eyes" />
       </Container>
+      <CardContainer>{cards}</CardContainer>
     </MainContainer>
   )
 }

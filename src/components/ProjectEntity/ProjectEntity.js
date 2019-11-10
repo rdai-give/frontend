@@ -15,6 +15,7 @@ const Container = styled.section`
   font-weight: 600;
   color: #e10707;
   text-decoration: none;
+  border-radius: 10px;
   background-color: ${props => props.isSelected && "red"};
 `
 const Button = styled.button`
@@ -24,6 +25,7 @@ const Button = styled.button`
   display: flex;
   flex-direction: column;
   border-radius: 11px;
+  background-color: white;
 `
 
 const H1 = styled.h1`
