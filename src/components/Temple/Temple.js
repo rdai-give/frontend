@@ -24,9 +24,8 @@ class Temple extends Component {
         <a href="/" className="share__link">
           Place Your Offering
         </a>
-        <a href="/" className="back__link">
-          back
-        </a>
+        <img src="bigg.png" alt="" className="original" />
+        <img src="redeyes.png" alt="" className="eyes" />
       </Container>
     )
   }

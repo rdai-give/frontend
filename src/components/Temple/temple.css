@@ -96,3 +96,30 @@ body {
   stroke: goldenrod;
   fill: none;
 }
+.eyes {
+  position: absolute;
+  top: 48%;
+  left: 37.2%;
+  width: 27%;
+  height: 8%;
+  animation: flasheyes 3s linear 2s infinite;
+}
+
+@keyframes flasheyes {
+  0% {
+    opacity: 0%;
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+
+.original {
+  width: 100vw;
+  height: 100vh;
+}
