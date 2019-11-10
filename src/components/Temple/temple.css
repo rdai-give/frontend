@@ -7,7 +7,6 @@ body {
 .torch__container {
   display: flex;
   justify-content: space-between;
-  margin-top: 1%;
 }
 .torch {
   width: 160px;
@@ -20,6 +19,8 @@ body {
   background: transparent;
 }
 .card {
+  position: relative;
+  top: 0;
   cursor: pointer;
   width: 10rem;
   height: 14.5rem;
@@ -35,9 +36,10 @@ body {
 
 .card__front {
   position: absolute;
-  width: 12rem;
+  width: 14rem;
   height: 15rem;
-  top: 27%;
+  top: 0;
+  left: -20%;
   backface-visibility: hidden;
   transform: perspective(600px) rotateY(0deg);
 }
