@@ -17,24 +17,6 @@
     "URL": "https://ethhub.io/"
 },
 {
-    "name": "Gitcoin",
-    "description": "Crowdfunding and freelance devs for your projects",
-    "image": ,
-    "category": "Sustainability",
-    "address": "0x00De4B13153673BCAE2616b67bf822500d325Fc3",
-    "twitter": "@gitcoin",
-    "URL": "https://gitcoin.co/"
-},
-{
-    "name": "threadpool",
-    "description": "",
-    "image": ,
-    "category": "Education",
-    "address": "0x18D80Ffdbd08F70B314f06Ae9D1b309135Af9405",
-    "twitter": "@threadpool_io",
-    "URL": ""
-},
-{
     "name": "One Click Dapp",
     "description": "Turning smart contracts into easy-to-use dApps",
     "image": ,
@@ -62,6 +44,25 @@
     "URL": "https://altarofrdai.io/"
 },
 {
+    "name": "PhonePhreak3.0",
+    "description": "Voice-calling Ethereum addresses",
+    "image": ,
+    "category": "Wizardry",
+    "address": "",
+    "twitter": "@ejwessel",
+    "URL": "https://devpost.com/software/"
+},
+{
+    "name": "threadpool",
+    "description": "",
+    "image": ,
+    "category": "Education",
+    "address": "0x18D80Ffdbd08F70B314f06Ae9D1b309135Af9405",
+    "twitter": "@threadpool_io",
+    "URL": "https://devpost.com/software/threadpool"
+},
+
+{
     "name": "FLiFF",
     "description": "The better way to settle up with your friends",
     "image": "fliff-cover.png",
@@ -87,4 +88,31 @@
     "address": "0x59B96e98B97f3d1A7e59dF53cb0f05E650c4FFfA",
     "twitter": "@cryptobrawl",
     "URL": "https://cryptobrawl.online"
+},
+{
+    "name": "Blocks of Notes",
+    "description": "Anonymous suggestion/complaint box with timed release",
+    "image": ,
+    "category": "dApp",
+    "address": "0x74B0A71a430de8022622c8dDFFe3f9EED0876207",
+    "twitter": "@CuteManhole",
+    "URL": "https://devpost.com/software/blocksofnotes"
+},
+{
+    "name": "BountyUp",
+    "description": "Bounties platform sustained by rDAI",
+    "image": ,
+    "category": "Bounties",
+    "address": "",
+    "twitter": "@cedriking",
+    "URL": "https://devpost.com/software/bountyup"
+},
+{
+    "name": "EtherTeens",
+    "description": "E2E encrypted messaging with IPFS storage",
+    "image": ,
+    "category": "Privacy",
+    "address": "",
+    "twitter": "@",
+    "URL": "https://devpost.com/software/********"
 },
