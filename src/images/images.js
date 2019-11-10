@@ -3,22 +3,18 @@ import blocks from "./blocks.png"
 import bounty from "./bounty.png"
 import brawl from "./brawl.png"
 import cypher from "./cypher.png"
-import ent from "./ent.png"
 import ethhub from "./ethhub.png"
 import fliff from "./fliff.png"
-import gamekeeper from "./gamekeeper.png"
-import gitcoin from "./gitcoin.png"
 import ocd from "./ocd.png"
 import rdai from "./rdai.png"
-import supporter from "./supporter.png"
-import teens from "./teens.png"
 import thread from "./thread.png"
-import threadpool from "./threadpool_logo.png"
 import voip from "./voip.png"
+import blocktalk from "./blocktalk.png"
 
+import blocktalkCard from "./blocktalk-card.png"
 import altarCard from "./altar-card.png"
 import blocksCard from "./blocks-card.png"
-import bountyCard from "./bounty-card.png"
+import bountyCard from "./bounty-card2.png"
 import brawlCard from "./brawl-card.png"
 import cypherCard from "./cypher-card.png"
 import ethhubCard from "./ethhub-card.png"
@@ -34,34 +30,24 @@ const IMAGES = {
   bounty,
   brawl,
   cypher,
-  ent,
   ethhub,
   fliff,
-  gamekeeper,
-  gitcoin,
   ocd,
   rdai,
-  supporter,
-  teens,
   thread,
-  threadpool,
   voip,
+  blocktalk,
+  blocktalkCard,
   altarCard,
   blocksCard,
   bountyCard,
   brawlCard,
   cypherCard,
-  entCard,
   ethhubCard,
   fliffCard,
-  gamekeeperCard,
-  gitcoinCard,
   ocdCard,
   rdaiCard,
-  supporterCard,
-  teensCard,
   threadCard,
-  threadpoolCard,
   voipCard,
 }
 

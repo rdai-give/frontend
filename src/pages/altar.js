@@ -40,11 +40,10 @@ const Altar = () => {
   const cards = []
   PROJECTS.forEach(project => {
     if (selectedArray.includes(project.name)) {
-      cards.push(IMAGES[`${project.image}-card`])
+      cards.push(IMAGES[`${project.image}Card`])
     }
     return null
   })
-  console.log(cards)
 
   // const [context] = useContext(Context)
   // const { selectedCards } = context

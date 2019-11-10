@@ -1,4 +1,6 @@
 import React from "react"
+import PropTypes from "prop-types"
+
 import cardback from "./cards/cardb.png"
 
 const Card = ({ cards }) => {
@@ -41,6 +43,10 @@ const Card = ({ cards }) => {
     )
   }
   return <></>
+}
+
+Card.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default Card

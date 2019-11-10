@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import "./temple.css"
 
 const Container = styled.section`
   text-align: center;
