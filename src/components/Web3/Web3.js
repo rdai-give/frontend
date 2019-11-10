@@ -58,7 +58,7 @@ const Web3Wrapper = () => {
         ...context,
         isWeb3Present: true,
         address: walletAddress,
-        // userDetails,
+        userDetails,
         walletProvider,
         tribute,
         error: "",

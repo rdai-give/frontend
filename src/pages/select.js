@@ -17,7 +17,11 @@ const Container = styled.section`
 const Select = () => {
   const [context, setContext] = useContext(Context)
 
-  const { tribute } = context
+  const { tribute, userDetails } = context
+  let daiBalance = 0
+  if (typeof userDetails !== "undefined") {
+    daiBalance = userDetails.daiBalance
+  }
 
   const [state, setState] = useState({
     selectedCards: [],
@@ -53,7 +57,7 @@ const Select = () => {
         proportions.push(1)
       }
     })
-    tribute.generateNew("100", recipients, proportions)
+    tribute.generateNew(`${daiBalance}`, recipients, proportions)
     // send user to /altar
   }
 
