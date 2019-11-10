@@ -1,0 +1,73 @@
+/* card functionality */
+.card__container {
+  display: flex;
+  justify-content: space-evenly;
+  background: transparent;
+}
+.card {
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  width: 15rem;
+  height: 19rem;
+}
+
+.card__back,
+.card__front {
+  /* width: 100%;
+  height: 100%; */
+  overflow: hidden;
+  transition: transform 0.6s linear;
+  position: absolute;
+  top: 0;
+  left: 8%;
+  /* backface-visibility: hidden; */
+  /* transform: perspective(600px) rotateY(0deg); */
+}
+
+.card__back {
+  /* background: #f1f1f1; */
+  /* transform: perspective(600px) rotateY(180deg); */
+}
+
+.card__front > img {
+  height: 100%;
+}
+.card__back > img {
+}
+
+.card:hover > .card__front {
+  /* transform: perspective(600px) rotateY(-180deg); */
+}
+
+.card:hover > .card__back {
+  /* transform: perspective(600px) rotateY(0deg); */
+}
+
+.original {
+  width: 100vw;
+  height: 100vh;
+}
+
+.eyes {
+  position: absolute;
+  top: 46.5%;
+  left: 36.2%;
+  width: 26.9%;
+  height: 5%;
+  animation: flash 2s linear 1s infinite;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

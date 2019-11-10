@@ -1,47 +1,38 @@
 import React from "react"
-import card1 from "./cards/1.png"
-import card2 from "./cards/2.png"
-import card3 from "./cards/3.png"
-import card4 from "./cards/4.png"
-import cardback from "./cards/cardb.png"
+import PropTypes from "prop-types"
 
-const Card = () => {
-  return (
-    <div className="card__container">
-      <div className="card card__1">
-        <div className="card__back">
-          <img src={card1} alt="" className="card card1" />
+const Card = ({ cards }) => {
+  if (cards.length > 0) {
+    return (
+      <div className="card__container">
+        <div className="card card__1">
+          <div className="card__back">
+            <img src={cards[0]} alt="" className="card card1" />
+          </div>
         </div>
-        <div className="card__front">
-          <img src={cardback} alt="" />
+        <div className="card card__2">
+          <div className="card__back">
+            <img src={cards[1]} alt="" className="card card1" />
+          </div>
         </div>
-      </div>
-      <div className="card card__2">
-        <div className="card__back">
-          <img src={card2} alt="" className="card card1" />
+        <div className="card card__3">
+          <div className="card__back">
+            <img src={cards[2]} alt="" className="card card1" />
+          </div>
         </div>
-        <div className="card__front">
-          <img src={cardback} alt="" />
-        </div>
-      </div>
-      <div className="card card__3">
-        <div className="card__back">
-          <img src={card3} alt="" className="card card1" />
-        </div>
-        <div className="card__front">
-          <img src={cardback} alt="" />
+        <div className="card card__4">
+          <div className="card__back">
+            <img src={cards[3]} alt="" className="card card1" />
+          </div>
         </div>
       </div>
-      <div className="card card__4">
-        <div className="card__back">
-          <img src={card4} alt="" className="card card1" />
-        </div>
-        <div className="card__front">
-          <img src={cardback} alt="" />
-        </div>
-      </div>
-    </div>
-  )
+    )
+  }
+  return <></>
+}
+
+Card.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default Card
