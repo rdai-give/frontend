@@ -39,7 +39,9 @@ const Select = () => {
   const [context, setContext] = useContext(Context)
   const { tribute, userDetails, compoundRate } = context
 
-  let cRate = localStorage.getItem("compoundRate")
+  const isBrowser = typeof window !== "undefined"
+  let cRate = 0
+  if (isBrowser) cRate = localStorage.getItem("compoundRate")
   if (typeof compoundRate !== "undefined") cRate = compoundRate
 
   let daiBalance = 0
@@ -109,7 +111,8 @@ const Select = () => {
 
   const ProjectList = () => {
     const selectedArray = state.selectedCards
-    const list = PROJECTS.map(project => {
+    let list = []
+    list = PROJECTS.map(project => {
       let isSelected = false
       if (selectedArray.includes(project.name)) {
         isSelected = true
