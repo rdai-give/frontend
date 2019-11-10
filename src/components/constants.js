@@ -36,7 +36,7 @@ const PROJECTS = [
     URL: "https://altarofrdai.io/",
   },
   {
-    name: "PhonePhreak3.0",
+    name: "E.TH. Phone Home",
     description: "Voice-calling Ethereum addresses",
     image: "voip",
     category: "Wizardry",
@@ -68,7 +68,7 @@ const PROJECTS = [
     description: "Freedom-enhancing Linux distro for cyber protocols",
     image: "cypher",
     category: "Tooling",
-    address: "cypherplugs.eth",
+    address: "0x65d676F3Eca501b324A636933Cd3b8c4fB5D9228",
     twitter: "@cypherplugs",
     URL: "https://cypherplugs.com",
   },
