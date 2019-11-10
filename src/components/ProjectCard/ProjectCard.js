@@ -6,28 +6,20 @@ const Container = styled.section`
   text-align: center;
 `
 
-const ProjectEntity = ({ project, isSelected, onClick }) => {
+const ProjectCard = ({ project }) => {
   const { name, description, image, category, twitter } = project
   return (
-    <button
-      type="button"
-      onClick={() => {
-        onClick(name)
-      }}
-    >
-      <Container>
-        {isSelected}
-        {name}
-        {description}
-        {image}
-        {category}
-        {twitter}
-      </Container>
-    </button>
+    <Container>
+      {name}
+      {description}
+      {image}
+      {category}
+      {twitter}
+    </Container>
   )
 }
 
-ProjectEntity.propTypes = {
+ProjectCard.propTypes = {
   project: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -35,8 +27,6 @@ ProjectEntity.propTypes = {
     category: PropTypes.string.isRequired,
     twitter: PropTypes.string.isRequired,
   }).isRequired,
-  isSelected: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
 }
 
-export default ProjectEntity
+export default ProjectCard
