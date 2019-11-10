@@ -2,7 +2,6 @@ import React from "react"
 // import React, { useContext } from "react"
 
 import styled from "styled-components"
-import Layout from "../components/Layout/Layout"
 // import { Context } from "../components/context"
 // import ProjectCard from "../components/ProjectCard/ProjectCard"
 
@@ -27,11 +26,11 @@ const Altar = () => {
   }
 
   return (
-    <Layout>
+    <>
       <Container>
         <CardList />
       </Container>
-    </Layout>
+    </>
   )
 }
 

@@ -11,7 +11,6 @@ import styled from "styled-components"
 import "../components/fonts.css"
 
 // const { bigNumberify } = ethers.utils
-document.body.style.backgroundColor = "black"
 
 const H1 = styled.h1`
   font-family: monospace;
