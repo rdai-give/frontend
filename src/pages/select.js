@@ -109,6 +109,7 @@ const Select = () => {
     setContext({
       ...context,
       selectedCards: state.selectedCards,
+      cardOffering,
     })
     console.log("setting to context:", state.selectedCards)
     // trigger tx

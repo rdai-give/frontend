@@ -46,7 +46,7 @@ const PROJECTS = [
   },
   {
     name: "threadpool",
-    description: "Pooling the threads",
+    description: "Engineering + Entrepreneurship",
     image: "thread",
     category: "Education",
     address: "0x18D80Ffdbd08F70B314f06Ae9D1b309135Af9405",
@@ -102,7 +102,7 @@ const PROJECTS = [
   {
     name: "Block Talk",
     description: "E2E encrypted messaging with IPFS storage",
-    image: "teens",
+    image: "blocktalk",
     category: "Privacy",
     address: "0x8a68Df0029c9e8B64aD08f9a19a2f8513a4ca70b",
     twitter: "@",

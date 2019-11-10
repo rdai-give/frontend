@@ -20,6 +20,7 @@ const H1 = styled.h1`
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
+  padding: 30px 30px 0 30px;
   color: #c80303;
 `
 
@@ -45,12 +46,18 @@ const P = styled.p`
 
 const StyledLink = styled(Link)`
   font-family: monospace;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 600;
-  color: #e3e3e3;
+  color: #e10707;
   text-decoration: none;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
   transition: all 0.2s ease;
-
+  border-radius: 11px;
+  background-color: white;
   &:hover {
     transition: border 0.2s ease;
   }
