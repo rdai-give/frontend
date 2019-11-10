@@ -98,9 +98,9 @@ body {
 }
 .eyes {
   position: absolute;
-  top: 48%;
-  left: 37.2%;
-  width: 27%;
+  top: 46.5%;
+  left: 36.2%;
+  width: 26.9%;
   height: 8%;
   animation: flasheyes 3s linear 2s infinite;
 }
