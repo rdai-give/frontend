@@ -11,7 +11,7 @@ import styled from "styled-components"
 import "../components/fonts.css"
 
 // const { bigNumberify } = ethers.utils
-document.body.style.backgroundColor = "black";
+document.body.style.backgroundColor = "black"
 
 const H1 = styled.h1`
   font-family: monospace;
@@ -21,7 +21,7 @@ const H1 = styled.h1`
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
-  color: #C80303;
+  color: #c80303;
 `
 
 const H2 = styled.h2`
@@ -32,7 +32,7 @@ const H2 = styled.h2`
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
-  color: #C80303;
+  color: #c80303;
 `
 
 const P = styled.p`
@@ -41,14 +41,14 @@ const P = styled.p`
   max-width: 550px;
   margin: 15px auto 15px;
   line-height: 1.3;
-  color: #C80303;
+  color: #c80303;
 `
 
 const StyledLink = styled(Link)`
   font-family: monospace;
   font-size: 50px;
   font-weight: 600;
-  color: #E3E3E3;
+  color: #e3e3e3;
   text-decoration: none;
   transition: all 0.2s ease;
 
@@ -108,13 +108,10 @@ const MainPage = () => {
         <H1>The Altar of rDAI</H1>
         <br />
 
-        <H2>
-          The Altar presses your idle DAI into serving a greater purpose
-        </H2>
+        <H2>The Altar presses your idle DAI into serving a greater purpose</H2>
         <br />
         <P>
-          More rDAI info at{" "}
-          <a href="https://rdai.money">rdai.money</a>
+          More rDAI info at <a href="https://rdai.money">rdai.money</a>
         </P>
         <br />
         <StyledLink to="/select">Proceed</StyledLink>
