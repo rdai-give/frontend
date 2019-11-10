@@ -12,14 +12,13 @@ import "../components/fonts.css"
 
 const Container = styled.section`
   text-align: center;
-  
 `
 
 const StyledButton = styled.button`
   font-family: monospace;
   font-size: 40px;
   font-weight: 600;
-  color: #E10707;
+  color: #e10707;
   text-decoration: none;
   text-shadow: 2px 2px gray;
   padding-top: 20px;
