@@ -53,8 +53,12 @@ const Temple = () => {
         </div>
       </div>
       <div>
-        <a href="#" className="share__link">Place Your Offering</a>
-        <a href="#" className="back__link">back</a>
+        <a href="/" className="share__link">
+          Place Your Offering
+        </a>
+        <a href="/" className="back__link">
+          back
+        </a>
       </div>
     </Container>
   )

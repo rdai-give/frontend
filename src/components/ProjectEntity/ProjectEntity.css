@@ -1,0 +1,33 @@
+.menu__container {
+  display: flex;
+  flex-flow: row-wrap;
+  box-sizing: border-box;
+}
+
+.menu {
+  width: 185px;
+  height: 250px;
+  background: darkblue;
+  border-radius: 12px;
+  margin-right: 2rem;
+}
+
+.menu ol {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.menu li {
+  list-style: none;
+  font-family: "work sans";
+  text-align: center;
+  color: white;
+  letter-spacing: 1.5px;
+  margin-left: -25%;
+}
+
+.menu img {
+  width: 60%;
+}
