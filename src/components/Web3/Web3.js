@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react"
 import { ethers } from "ethers"
 import Tribute from "tribute-utils"
+import axios from "axios"
 // import Notify from "bnc-notify"
 // import Subspace from "@status-im/subspace"
 
@@ -52,8 +53,17 @@ const Web3Wrapper = () => {
       // Load tools
       const tribute = new Tribute(DAIContract, rDAIContract, walletAddress[0])
       const userDetails = await tribute.getInfo(walletAddress[0])
-
       console.log(userDetails)
+
+      // Load compound
+      const res = await axios.get(
+        "https://api.compound.finance/api/v2/ctoken?addresses[]=0xf5dce57282a584d2746faf1593d3121fcac444dc"
+      )
+      const compoundRate =
+        Math.round(res.data.cToken[0].supply_rate.value * 10000) / 100
+      console.log(`Compound Rate: ${compoundRate}%`)
+      localStorage.setItem("compoundRate", compoundRate)
+
       setContext({
         ...context,
         isWeb3Present: true,
@@ -61,6 +71,7 @@ const Web3Wrapper = () => {
         userDetails,
         walletProvider,
         tribute,
+        compoundRate,
         error: "",
       })
       // } catch (error) {
