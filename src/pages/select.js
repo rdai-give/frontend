@@ -15,17 +15,21 @@ const Container = styled.section`
 `
 
 const Select = () => {
+  const [state, setState] = useState({
+    selectedCards: [],
+  })
   const [context, setContext] = useContext(Context)
+  const { tribute, userDetails, compoundRate } = context
 
-  const { tribute, userDetails } = context
+  let cRate = localStorage.getItem("compoundRate")
+  if (typeof compoundRate !== "undefined") cRate = compoundRate
+
   let daiBalance = 0
   if (typeof userDetails !== "undefined") {
     daiBalance = userDetails.daiBalance
   }
 
-  const [state, setState] = useState({
-    selectedCards: [],
-  })
+  const buyingPower = Math.round(daiBalance * cRate) / 100
 
   const onToggleSelect = () => name => {
     const cardsArray = state.selectedCards
@@ -57,8 +61,10 @@ const Select = () => {
         proportions.push(1)
       }
     })
+    console.log(recipients)
     tribute.generateNew(`${daiBalance}`, recipients, proportions)
     // send user to /altar
+    // TODO
   }
 
   const ProjectList = () => {
@@ -83,7 +89,7 @@ const Select = () => {
   return (
     <Layout>
       <Container>
-        <SEO title="Select" />
+        <SEO title="Select" />${buyingPower} / year
         <ProjectList />
         <button type="button" onClick={submitTribute()}>
           Approach the Altar of rDAI
