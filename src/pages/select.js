@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react"
-
+import { navigate } from "gatsby"
 import styled from "styled-components"
 import SEO from "../components/seo"
 import Layout from "../components/Layout/Layout"
@@ -38,7 +38,7 @@ const Select = () => {
   })
   const [context, setContext] = useContext(Context)
   const { tribute, userDetails, compoundRate } = context
-
+  console.log(context)
   const isBrowser = typeof window !== "undefined"
   let cRate = 0
   if (isBrowser) cRate = localStorage.getItem("compoundRate")
@@ -50,7 +50,7 @@ const Select = () => {
   }
 
   const buyingPower = Math.round(daiBalance * cRate) / 100
-  let cardOffering = null
+  let cardOffering = ""
   if (state.selectedCards.length > 0)
     cardOffering = `${Math.round(
       (buyingPower / state.selectedCards.length) * 100
@@ -95,7 +95,7 @@ const Select = () => {
     await tx2.wait(1)
 
     // send user to /altar
-    console.log("change page")
+    navigate("/altar")
   }
 
   const ApproachButton = () => {
