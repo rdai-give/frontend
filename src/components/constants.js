@@ -100,11 +100,11 @@ const PROJECTS = [
     URL: "https://devpost.com/software/bountyup",
   },
   {
-    name: "EtherTeens",
+    name: "Block Talk",
     description: "E2E encrypted messaging with IPFS storage",
     image: "teens",
     category: "Privacy",
-    address: "",
+    address: "0x8a68Df0029c9e8B64aD08f9a19a2f8513a4ca70b",
     twitter: "@",
     URL: "https://devpost.com/software/********",
   },

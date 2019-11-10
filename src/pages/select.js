@@ -30,6 +30,8 @@ const Select = () => {
   }
 
   const buyingPower = Math.round(daiBalance * cRate) / 100
+  const cardOffering = buyingPower / state.selectedCards.length
+  console.log(cardOffering)
 
   const onToggleSelect = () => name => {
     const cardsArray = state.selectedCards
