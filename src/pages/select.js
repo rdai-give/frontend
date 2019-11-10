@@ -12,14 +12,20 @@ import "../components/fonts.css"
 
 const Container = styled.section`
   text-align: center;
+  
 `
 
 const StyledButton = styled.button`
-  font-family: "Inter";
-  font-size: 20px;
+  font-family: monospace;
+  font-size: 40px;
   font-weight: 600;
-  color: #0e0544;
+  color: #E10707;
   text-decoration: none;
+  text-shadow: 2px 2px gray;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
   transition: all 0.2s ease;
 
   &:hover {
