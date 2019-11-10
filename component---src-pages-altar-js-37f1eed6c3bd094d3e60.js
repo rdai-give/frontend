@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{XWcr:function(n,e,t){"use strict";t.r(e);var a=t("q1tI"),c=t.n(a),o=t("vOnD"),r=t("yBb5"),i=(t("ooEi"),o.a.section.withConfig({displayName:"altar__Container",componentId:"sc-1hme56h-0"})(["text-align:center;"]));e.default=function(){return c.a.createElement(r.a,null,c.a.createElement(i,null,c.a.createElement((function(){return[]}),null)))}}}]);
-//# sourceMappingURL=component---src-pages-altar-js-37f1eed6c3bd094d3e60.js.map
