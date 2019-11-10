@@ -9,7 +9,8 @@ body {
   justify-content: space-between;
 }
 .torch {
-  width: 160px;
+  margin-top: 1%;
+  width: 150px;
 }
 
 /* card functionality */
