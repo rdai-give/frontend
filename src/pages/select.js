@@ -14,6 +14,24 @@ const Container = styled.section`
   text-align: center;
 `
 
+const StyledButton = styled.button`
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 600;
+  color: #0e0544;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transition: border 0.2s ease;
+  }
+
+  &:active {
+    transform: scale(0.97);
+    transition: transform 0.2s ease;
+  }
+`
+
 const Select = () => {
   const [state, setState] = useState({
     selectedCards: [],
@@ -30,12 +48,14 @@ const Select = () => {
   }
 
   const buyingPower = Math.round(daiBalance * cRate) / 100
-  const cardOffering = buyingPower / state.selectedCards.length
-  console.log(cardOffering)
+  let cardOffering = null
+  if (state.selectedCards.length > 0)
+    cardOffering = `${Math.round(
+      (buyingPower / state.selectedCards.length) * 100
+    ) / 100}`
 
   const onToggleSelect = () => name => {
     const cardsArray = state.selectedCards
-    console.log(cardsArray.includes(name))
     if (cardsArray.includes(name)) {
       cardsArray.splice(cardsArray.indexOf(name), 1)
       setState({ selectedCards: cardsArray })
@@ -47,7 +67,7 @@ const Select = () => {
     })
   }
 
-  const submitTribute = () => () => {
+  const submitTribute = () => async () => {
     // setContext
     setContext({
       ...context,
@@ -64,9 +84,27 @@ const Select = () => {
       }
     })
     console.log(recipients)
-    tribute.generateNew(`${daiBalance}`, recipients, proportions)
+    const { tx2 } = await tribute.generateNew(
+      `${daiBalance}`,
+      recipients,
+      proportions
+    )
+    setState({ ...state, isPendingTx: true })
+    await tx2.wait(1)
+
     // send user to /altar
-    // TODO
+    console.log("change page")
+  }
+
+  const ApproachButton = () => {
+    let buttonText = "Approach the Altar of rDAI"
+    if (state.isPendingTx)
+      buttonText = "The Altar is reviewing your offering..."
+    return (
+      <StyledButton type="button" onClick={submitTribute()}>
+        {buttonText}
+      </StyledButton>
+    )
   }
 
   const ProjectList = () => {
@@ -78,6 +116,7 @@ const Select = () => {
       }
       return (
         <ProjectEntity
+          amount={cardOffering}
           key={`${project.name}`}
           project={project}
           isSelected={isSelected}
@@ -93,9 +132,7 @@ const Select = () => {
       <Container>
         <SEO title="Select" />${buyingPower} / year
         <ProjectList />
-        <button type="button" onClick={submitTribute()}>
-          Approach the Altar of rDAI
-        </button>
+        <ApproachButton />
       </Container>
     </Layout>
   )
