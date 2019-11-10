@@ -1,15 +1,11 @@
-import React, { useContext } from "react"
-import { Context } from "../context"
+import React from "react"
+// import React, { useContext } from "react"
+// import { Context } from "../context"
 
 const BackgroundScene = () => {
-  const [context] = useContext(Context)
-  const { showGarden } = context
+  // const [context] = useContext(Context)
 
-  if (showGarden) {
-    // Do something
-    // Move camera
-  }
-  return <>BackgroundScene</>
+  return <></>
 }
 
 export default BackgroundScene

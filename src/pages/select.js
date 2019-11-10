@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react"
 import { navigate } from "gatsby"
 import styled from "styled-components"
 import SEO from "../components/seo"
-import Layout from "../components/Layout/Layout"
 import ProjectEntity from "../components/ProjectEntity/ProjectEntity"
 import { Context } from "../components/context"
 
@@ -54,7 +53,7 @@ const Select = () => {
   if (typeof userDetails !== "undefined") {
     daiBalance = userDetails.daiBalance
   }
-
+  console.log(context)
   const buyingPower = Math.round(daiBalance * cRate) / 100
   let cardOffering = ""
   if (state.selectedCards.length > 0)
@@ -137,13 +136,13 @@ const Select = () => {
   }
 
   return (
-    <Layout>
+    <>
       <Container>
         <SEO title="Select" />${buyingPower} / year
         <ProjectList />
         <ApproachButton />
       </Container>
-    </Layout>
+    </>
   )
 }
 
