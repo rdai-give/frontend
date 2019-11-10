@@ -11,32 +11,44 @@ import styled from "styled-components"
 import "../components/fonts.css"
 
 // const { bigNumberify } = ethers.utils
+document.body.style.backgroundColor = "black"
 
 const H1 = styled.h1`
-  font-family: "Inter", sans-serif;
+  font-family: monospace;
   font-weight: 900;
   letter-spacing: -0.2px;
   font-size: 64px;
   text-align: center;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  color: #0e0544;
+  color: #c80303;
+`
+
+const H2 = styled.h2`
+  font-family: monospace;
+  font-weight: 200;
+  letter-spacing: -0.2px;
+  font-size: 36px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #c80303;
 `
 
 const P = styled.p`
-  font-family: "Inter", sans-serif;
+  font-family: monospace;
   font-size: 24px;
   max-width: 550px;
   margin: 15px auto 15px;
   line-height: 1.3;
-  color: #5a6561;
+  color: #c80303;
 `
 
 const StyledLink = styled(Link)`
-  font-family: "Inter";
-  font-size: 20px;
+  font-family: monospace;
+  font-size: 50px;
   font-weight: 600;
-  color: #0e0544;
+  color: #e3e3e3;
   text-decoration: none;
   transition: all 0.2s ease;
 
@@ -93,9 +105,16 @@ const MainPage = () => {
   return (
     <>
       <Container>
-        <H1>Earn and donate interest to Open Source projects</H1>
-        <P>Sub-header text</P>
-        <StyledLink to="/select">Connect</StyledLink>
+        <H1>The Altar of rDAI</H1>
+        <br />
+
+        <H2>The Altar presses your idle DAI into serving a greater purpose</H2>
+        <br />
+        <P>
+          More rDAI info at <a href="https://rdai.money">rdai.money</a>
+        </P>
+        <br />
+        <StyledLink to="/select">Proceed</StyledLink>
       </Container>
     </>
   )

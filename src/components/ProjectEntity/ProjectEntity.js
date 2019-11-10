@@ -5,25 +5,36 @@ import "./ProjectEntity.css"
 
 const Container = styled.section`
   text-align: center;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: #e10707;
+  text-decoration: none;
 `
 
-const ProjectEntity = ({ project }) => {
-  const { name, description, image, category } = project
+const ProjectEntity = ({ project, isSelected, onClick, amount }) => {
+  const { name, description, image, category, twitter } = project
   return (
-    <Container>
-      <div className="menu__container">
-        <div className="menu">
-          <ol>
-            <li className="menu__item">
-              <img className="menu__img" src={image} alt="" />
-            </li>
-            <li className="menu__item">{name}</li>
-            <li className="menu__item">{category}</li>
-            <li className="menu__item">{description}</li>
-          </ol>
-        </div>
-      </div>
-    </Container>
+    <button
+      type="button"
+      onClick={() => {
+        onClick(name)
+      }}
+    >
+      <Container>
+        {isSelected}
+        {name}
+        {description}
+        {image}
+        {category}
+        {twitter}
+        {isSelected && amount}
+      </Container>
+    </button>
   )
 }
 
@@ -35,6 +46,9 @@ ProjectEntity.propTypes = {
     category: PropTypes.string.isRequired,
     twitter: PropTypes.string.isRequired,
   }).isRequired,
+  isSelected: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
+  amount: PropTypes.string.isRequired,
 }
 
 export default ProjectEntity
