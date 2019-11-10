@@ -6,14 +6,27 @@ import { Context } from "../components/context"
 // import ProjectCard from "../components/ProjectCard/ProjectCard"
 
 import PROJECTS from "../components/constants"
+import Cards from "../components/Cards/Cards"
 
 import "../components/fonts.css"
-import "../components/Temple/temple.css"
+import "./temple.css"
+
+import IMAGES from "../images/images"
+
 import big from "../images/bigg.png"
 import redeyes from "../images/redeyes.png"
 
-const Container = styled.section`
-  text-align: center;
+const Container = styled.section``
+const Image = styled.img`
+width: auto
+margin: 0 auto;
+height:600px
+`
+const CardContainer = styled.section`
+  position: absolute;
+  top: 593px;
+  margin: 0 auto;
+  width: 100%;
 `
 
 const Altar = () => {
@@ -27,7 +40,7 @@ const Altar = () => {
   const cards = []
   PROJECTS.forEach(project => {
     if (selectedArray.includes(project.name)) {
-      cards.push(`${project.image}-card.png`)
+      cards.push(IMAGES[`${project.image}-card`])
     }
     return null
   })
@@ -48,8 +61,11 @@ const Altar = () => {
 
   return (
     <>
+      <CardContainer>
+        <Cards cards={cards} />
+      </CardContainer>
       <Container>
-        <img src={big} alt="" className="original" />
+        <Image src={big} alt="" className="original" />
         <img src={redeyes} alt="" className="eyes" />
       </Container>
     </>

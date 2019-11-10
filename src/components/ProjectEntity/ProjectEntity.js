@@ -6,7 +6,7 @@ import "./ProjectEntity.css"
 import IMAGES from "../../images/images"
 
 const Container = styled.section`
-  padding: 20px;
+  padding: 10px;
   margin: 10px 10px 10px 10px;
   width: 300px;
   height: 400px;
