@@ -4,6 +4,16 @@ import PropTypes from "prop-types"
 
 const Container = styled.section`
   text-align: center;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: #E10707;
+  text-decoration: none;
+  
 `
 
 const ProjectEntity = ({ project, isSelected, onClick, amount }) => {
