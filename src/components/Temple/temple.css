@@ -1,0 +1,95 @@
+/* TODO: deal with the sizing dimeensions */
+body {
+  background: black;
+}
+
+/* temple */
+.torch__container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1%;
+}
+.torch {
+  width: 160px;
+}
+
+/* card functionality */
+.card__container {
+  display: flex;
+  justify-content: space-evenly;
+  background: transparent;
+}
+.card {
+  cursor: pointer;
+  width: 10rem;
+  height: 14.5rem;
+}
+
+.card__back,
+.card__front {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s linear;
+}
+
+.card__front {
+  position: absolute;
+  width: 12rem;
+  height: 15rem;
+  top: 27%;
+  backface-visibility: hidden;
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.card__back {
+  background: #f1f1f1;
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.card__front > img {
+  height: 100%;
+}
+
+.card:hover > .card__front {
+  transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .card__back {
+  transform: perspective(600px) rotateY(0deg);
+}
+
+/* share btn */
+
+.share__link {
+  text-decoration: none;
+  padding: 1rem 2rem;
+  position: absolute;
+  bottom: 10%;
+  font-family: "work sans";
+  color: black;
+  background: black;
+  margin-left: 43%;
+}
+
+.back__link {
+  font-family: "work sans";
+  color: gray;
+  position: absolute;
+  left: 56%;
+  font-size: 0.9rem;
+  bottom: 6%;
+}
+
+.logo {
+  width: 10rem;
+  position: absolute;
+  top: 0;
+  left: 45%;
+  box-shadow: -3px 9px 110px 30px rgba(255, 204, 0, 1);
+}
+
+.logo__path {
+  stroke: goldenrod;
+  fill: none;
+}
