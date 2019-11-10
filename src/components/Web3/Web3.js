@@ -37,7 +37,7 @@ const Web3Wrapper = () => {
       )
 
       const rDAIContract = new ethers.Contract(
-        CONTRACTS.rtoken.kovan,
+        CONTRACTS.rtoken[network.name],
         rDAIabi,
         walletProvider.getSigner()
       )
@@ -53,11 +53,12 @@ const Web3Wrapper = () => {
       const tribute = new Tribute(DAIContract, rDAIContract, walletAddress[0])
       const userDetails = await tribute.getInfo(walletAddress[0])
 
+      console.log(userDetails)
       setContext({
         ...context,
         isWeb3Present: true,
         address: walletAddress,
-        userDetails,
+        // userDetails,
         walletProvider,
         tribute,
         error: "",

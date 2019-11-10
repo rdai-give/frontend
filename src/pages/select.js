@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react"
+import React, { useState, useContext } from "react"
 
 import styled from "styled-components"
-import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/Layout/Layout"
 import ProjectEntity from "../components/ProjectEntity/ProjectEntity"
@@ -14,68 +13,73 @@ import "../components/fonts.css"
 const Container = styled.section`
   text-align: center;
 `
-const StyledLink = styled(Link)`
-  font-family: "Inter";
-  font-size: 20px;
-  font-weight: 600;
-  color: #0e0544;
-  text-decoration: none;
-  transition: all 0.2s ease;
-
-  &:hover {
-    transition: border 0.2s ease;
-  }
-
-  &:active {
-    transform: scale(0.97);
-    transition: transform 0.2s ease;
-  }
-`
-
-const ProjectList = ({ selectedCards, onClick }) => {
-  const list = PROJECTS.map(project => {
-    let isSelected = false
-    if (selectedCards.indexOf(project.name) > -1) {
-      isSelected = true
-    }
-    return (
-      <ProjectEntity
-        key={`${project.name}`}
-        project={project}
-        isSelected={isSelected}
-        onClick={onClick}
-      />
-    )
-  })
-  return list
-}
 
 const Select = () => {
+  const [context, setContext] = useContext(Context)
+
+  const { tribute } = context
+
   const [state, setState] = useState({
     selectedCards: [],
   })
 
-  const onToggleSelect = name => {
+  const onToggleSelect = () => name => {
     const cardsArray = state.selectedCards
-    if (cardsArray.indexOf(name)) {
-      console.log("remove card")
+    console.log(cardsArray.includes(name))
+    if (cardsArray.includes(name)) {
+      cardsArray.splice(cardsArray.indexOf(name), 1)
       setState({ selectedCards: cardsArray })
       return
     }
+    cardsArray.push(name)
     setState({
-      selectedCards: cardsArray.push(name),
+      selectedCards: cardsArray,
     })
+  }
+
+  const submitTribute = () => () => {
+    // setContext
+    setContext({
+      ...context,
+      selectedCards: state.selectedCards,
+    })
+    console.log("setting to context:", state.selectedCards)
+    // trigger tx
+    tribute.generateNew(
+      "100",
+      ["0x607EBb69D568DBe1d2283668120036A892E88e89"],
+      [1]
+    )
+    // send user to /altar
+  }
+
+  const ProjectList = () => {
+    const selectedArray = state.selectedCards
+    const list = PROJECTS.map(project => {
+      let isSelected = false
+      if (selectedArray.includes(project.name)) {
+        isSelected = true
+      }
+      return (
+        <ProjectEntity
+          key={`${project.name}`}
+          project={project}
+          isSelected={isSelected}
+          onClick={onToggleSelect()}
+        />
+      )
+    })
+    return list
   }
 
   return (
     <Layout>
       <Container>
         <SEO title="Select" />
-        <ProjectList
-          selectedCards={state.selectedCards}
-          onClick={onToggleSelect()}
-        />
-        <StyledLink to="/altar">Approach Altar of rDAI</StyledLink>
+        <ProjectList />
+        <button type="button" onClick={submitTribute()}>
+          Approach the Altar of rDAI
+        </button>
       </Container>
     </Layout>
   )

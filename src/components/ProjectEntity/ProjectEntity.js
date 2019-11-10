@@ -9,7 +9,12 @@ const Container = styled.section`
 const ProjectEntity = ({ project, isSelected, onClick }) => {
   const { name, description, image, category, twitter } = project
   return (
-    <button type="button" onClick={onClick}>
+    <button
+      type="button"
+      onClick={() => {
+        onClick(name)
+      }}
+    >
       <Container>
         {isSelected}
         {name}
@@ -30,6 +35,8 @@ ProjectEntity.propTypes = {
     category: PropTypes.string.isRequired,
     twitter: PropTypes.string.isRequired,
   }).isRequired,
+  isSelected: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 }
 
 export default ProjectEntity
