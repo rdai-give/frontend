@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useContext, useState } from "react"
+
 import styled from "styled-components"
 import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/Layout/Layout"
 import ProjectEntity from "../components/ProjectEntity/ProjectEntity"
+import { Context } from "../components/context"
 
 import PROJECTS from "../components/constants"
 
@@ -30,20 +32,49 @@ const StyledLink = styled(Link)`
   }
 `
 
-const ProjectList = () => {
+const ProjectList = ({ selectedCards, onClick }) => {
   const list = PROJECTS.map(project => {
-    return <ProjectEntity key={`${project.name}`} project={project} />
+    let isSelected = false
+    if (selectedCards.indexOf(project.name) > -1) {
+      isSelected = true
+    }
+    return (
+      <ProjectEntity
+        key={`${project.name}`}
+        project={project}
+        isSelected={isSelected}
+        onClick={onClick}
+      />
+    )
   })
-  console.log(list)
   return list
 }
 
 const Select = () => {
+  const [state, setState] = useState({
+    selectedCards: [],
+  })
+
+  const onToggleSelect = name => {
+    const cardsArray = state.selectedCards
+    if (cardsArray.indexOf(name)) {
+      console.log("remove card")
+      setState({ selectedCards: cardsArray })
+      return
+    }
+    setState({
+      selectedCards: cardsArray.push(name),
+    })
+  }
+
   return (
     <Layout>
       <Container>
         <SEO title="Select" />
-        <ProjectList />
+        <ProjectList
+          selectedCards={state.selectedCards}
+          onClick={onToggleSelect()}
+        />
         <StyledLink to="/altar">Approach Altar of rDAI</StyledLink>
       </Container>
     </Layout>
