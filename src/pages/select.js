@@ -11,6 +11,37 @@ import "../components/fonts.css"
 
 const Container = styled.section`
   text-align: center;
+  color: white;
+  align-content: center;
+  margin: 20px 30px 50px 30px;
+`
+const ProjectContainer = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+`
+const H2 = styled.h1`
+  font-family: monospace;
+  font-weight: 300;
+  letter-spacing: -0.2px;
+  font-size: 40px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 0 10px 0;
+  text-shadow: 1px 1px grey;
+  color: #c80303;
+`
+const H3 = styled.h2`
+  font-family: monospace;
+  font-weight: 300;
+  letter-spacing: -0.2px;
+  font-size: 36px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 0 10px 0;
+  color: #c80303;
 `
 
 const StyledButton = styled.button`
@@ -19,13 +50,13 @@ const StyledButton = styled.button`
   font-weight: 600;
   color: #e10707;
   text-decoration: none;
-  text-shadow: 2px 2px gray;
   padding-top: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   transition: all 0.2s ease;
-
+  border-radius: 11px;
+  background-color: white;
   &:hover {
     transition: border 0.2s ease;
   }
@@ -137,8 +168,15 @@ const Select = () => {
   return (
     <>
       <Container>
-        <SEO title="Select" />${buyingPower} / year
-        <ProjectList />
+        <SEO title="Select" />
+        <H3>The Altar of rDAI can conjure an estimated additional</H3>
+        <H2>{buyingPower} DAI / year</H2>
+        <H3>
+          that you may distribute to four projects below... choose wisely.
+        </H3>
+        <ProjectContainer>
+          <ProjectList />
+        </ProjectContainer>
         <ApproachButton />
       </Container>
     </>

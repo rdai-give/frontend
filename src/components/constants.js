@@ -46,7 +46,7 @@ const PROJECTS = [
   },
   {
     name: "threadpool",
-    description: "",
+    description: "Pooling the threads",
     image: "thread",
     category: "Education",
     address: "0x18D80Ffdbd08F70B314f06Ae9D1b309135Af9405",
