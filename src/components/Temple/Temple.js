@@ -18,7 +18,7 @@ const Temple = () => {
             <img src="temple/1.png" alt="" className="card card1" />
           </div>
           <div className="card__front">
-            <img src="images/cardback.jpeg" alt="" />
+            <img src="temple/cardback.jpeg" alt="" />
           </div>
         </div>
         <div className="card card__2">
@@ -26,7 +26,7 @@ const Temple = () => {
             <img src="temple/2.png" alt="" className="card card1" />
           </div>
           <div className="card__front">
-            <img src="images/cardback.jpeg" alt="" />
+            <img src="temple/cardback.jpeg" alt="" />
           </div>
         </div>
         <div className="card card__3">
@@ -34,7 +34,7 @@ const Temple = () => {
             <img src="temple/3.png" alt="" className="card card1" />
           </div>
           <div className="card__front">
-            <img src="temple/card__back.jpeg" alt="" />
+            <img src="temple/cardback.jpeg" alt="" />
           </div>
         </div>
         <div className="card card__4">
@@ -42,7 +42,7 @@ const Temple = () => {
             <img src="temple/4.png" alt="" className="card card1" />
           </div>
           <div className="card__front">
-            <img src="temple/card__back.jpeg" alt="" />
+            <img src="temple/cardback.jpeg" alt="" />
           </div>
         </div>
       </div>
