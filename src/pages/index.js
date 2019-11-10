@@ -93,9 +93,11 @@ const MainPage = () => {
   return (
     <>
       <Container>
-        <H1>Earn and donate interest to Open Source projects</H1>
-        <P>Sub-header text</P>
-        <StyledLink to="/select">Connect</StyledLink>
+        <H1>Welcome to The Altar of rDAI</H1>
+        <H2>The Altar presses your idle DAI into serving a greater cause - funding open source!</H2>
+        <P>Your DAI never leaves your wallet, though it earns interest that may be directed to worthy providers of our open source ecosystem</P>
+        <P>Find more information about rDAI at <a href="https://rdai.money">rdai.money</a><P>  
+    <StyledLink to="/select">Proceed</StyledLink>
       </Container>
     </>
   )
