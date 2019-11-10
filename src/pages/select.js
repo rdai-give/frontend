@@ -45,11 +45,15 @@ const Select = () => {
     })
     console.log("setting to context:", state.selectedCards)
     // trigger tx
-    tribute.generateNew(
-      "100",
-      ["0x607EBb69D568DBe1d2283668120036A892E88e89"],
-      [1]
-    )
+    const recipients = []
+    const proportions = []
+    PROJECTS.forEach(project => {
+      if (state.selectedCards.includes(project.name)) {
+        recipients.push(project.address)
+        proportions.push(1)
+      }
+    })
+    tribute.generateNew("100", recipients, proportions)
     // send user to /altar
   }
 
